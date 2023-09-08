@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- This is the container -->
+    <section>
+        <div id="content-box">
+            <h1>Love Calculator</h1>
+            <h3>Calculate your feelings for your Lover!</h3><br>
+            <label for="your-name">Your Name:</label>
+            <input type="text" id="your-name" name="your-name"><br><br>
+            <label for="crush-name">Lover's Name:</label>
+            <input type="text" id="crush-name" name="crush-name"><br><br>
+
+            <button onclick="calculateLove()" id="calculate">calculate</button>
+
+            <h2 id="result-message"></h2>
+            <p id="result-percentage"></p>
+        </div>
+    </section>
+
+    <script>
+        function calculateLove(){
+    let yourName = document.getElementById("your-name").value;
+    let crushName = document.getElementById("crush-name").value;
+
+    if (yourName != "" && crushName != ""){
+        let percentage = Math.floor(Math.random() * 100) + 1;
+        document.getElementById("result-message").innerText = yourName + " and " +crushName + "'s chance of love: "
+        document.getElementById("result-percentage").innerText = percentage.toString() + "%"
+    }
+}
+    </script>
+</body>
+</html>
